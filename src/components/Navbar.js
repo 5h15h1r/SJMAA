@@ -1,14 +1,46 @@
+import app from "@/firebase/firebase";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 const Navbar = () => {
 	const [state, setState] = useState(false);
 	const [windowSize, setwindowSize] = useState(0);
+	const [isSignedIn, setSignedIn] = useState(false);
+	const [displayName, setDisplayName] = useState(false);
+	const auth = getAuth(app);
+	const router = useRouter();
 
 	useEffect(() => {
 		//This code is executed in the browser
 		setwindowSize(window.innerWidth);
-		console.log(window.innerWidth);
+		onAuthStateChanged(auth, (user) => {
+			if (user) {
+				// User is signed in, see docs for a list of available properties
+				// https://firebase.google.com/docs/reference/js/auth.user
+				const uid = user.uid;
+				setSignedIn(true);
+				setDisplayName(user.displayName);
+				console.log(user.displayName);
+				// ...
+			} else {
+				// User is signed out
+				// ...
+				setSignedIn(false);
+			}
+		});
+		// console.log(window.innerWidth);
 	}, []);
+
+	const handleSignout = async () => {
+		await signOut(auth)
+			.then(() => {
+				router.push("/");
+			})
+			.catch((error) => {
+				alert(error);
+			});
+	};
 
 	const handleClick = () => {
 		if (state == false) setState(true);
@@ -23,26 +55,37 @@ const Navbar = () => {
 				<>
 					<nav className="bg-white border-gray-200 dark:bg-gray-900">
 						<div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-							<a href="" className="flex items-center">
+							<Link href="/" className="flex items-center">
 								{/* <img src="https://vaave.s3.amazonaws.com/assets/site_content/151669119/logo-cms.png" className="h-8 mr-3" alt="Flowbite Logo" /> */}
 								<span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
 									SJMAA
 								</span>
-							</a>
-							<div className="flex items-center space-x-6">
-								<a
-									href="tel:5541251234"
-									className="text-sm  text-blue-600 dark:text-blue-500 hover:underline"
-								>
-									Register
-								</a>
-								<a
-									href="#"
-									className="text-sm  text-blue-600 dark:text-blue-500 hover:underline"
-								>
-									Login
-								</a>
-							</div>
+							</Link>
+							{isSignedIn ? (
+								<div className="flex items-center justify-center space-x-4">
+									<div className="text-white">{displayName}</div>
+									<div className="text-white">
+										<button onClick={handleSignout} className="">
+											Logout
+										</button>
+									</div>
+								</div>
+							) : (
+								<div className="flex items-center space-x-6">
+									<Link
+										href="/user/register	"
+										className="text-sm  text-blue-600 dark:text-blue-500 hover:underline"
+									>
+										Register
+									</Link>
+									<Link
+										href="/user/login"
+										className="text-sm  text-blue-600 dark:text-blue-500 hover:underline"
+									>
+										Login
+									</Link>
+								</div>
+							)}
 						</div>
 					</nav>
 
@@ -119,7 +162,7 @@ const Navbar = () => {
 								{/* Login button */}
 								<div className="flex items-center">
 									<Link
-										href="#"
+										href="/user/login"
 										className="text-sm  text-blue-600 dark:text-blue-500 hover:underline"
 									>
 										Login
