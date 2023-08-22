@@ -151,16 +151,23 @@ const Navbar = () => {
 							</a>
 							<div className="flex items-center space-x-4">
 								{/* Register Button */}
-								<div className="flex items-center">
+								{isSignedIn ? (
+								<div className="flex items-center justify-center space-x-4">
+									<div className="text-white">{displayName}</div>
+									<div className="text-white">
+										<button onClick={handleSignout} className="">
+											Logout
+										</button>
+									</div>
+								</div>
+							) : (
+								<div className="flex items-center space-x-6">
 									<Link
-										href="/user/register"
+										href="/user/register	"
 										className="text-sm  text-blue-600 dark:text-blue-500 hover:underline"
 									>
 										Register
 									</Link>
-								</div>
-								{/* Login button */}
-								<div className="flex items-center">
 									<Link
 										href="/user/login"
 										className="text-sm  text-blue-600 dark:text-blue-500 hover:underline"
@@ -168,6 +175,7 @@ const Navbar = () => {
 										Login
 									</Link>
 								</div>
+							)}
 								{/* Burger Menu */}
 								<div className="flex-wrap items-center">
 									<button
