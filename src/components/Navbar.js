@@ -30,7 +30,7 @@ const Navbar = () => {
 			}
 		});
 		// console.log(window.innerWidth);
-	}, []);
+	}, [auth]);
 
 	const handleSignout = async () => {
 		await signOut(auth)
