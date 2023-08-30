@@ -1,12 +1,15 @@
-import Navbar from '@/components/Navbar'
-import React from 'react'
+
+import adminApp from "@/firebase/firebaseAdmin";
+import { getAuth } from "firebase/auth";
+import React from "react";
 
 const members = () => {
-  return (
-    <div>
-       
-    </div>
-  )
-}
+  adminApp
+	// auth.listUsers()
+  
 
-export default members
+	
+	return <div></div>;
+};
+
+export default members;

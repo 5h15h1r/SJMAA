@@ -84,7 +84,7 @@ const RegistrationForm = () => {
 				className="w-full max-w-sm border-gray-200 dark:bg-gray-700  rounded-lg shadow-md p-6"
 				onSubmit={handleSubmit}
 			>
-				<h2 className="text-2xl font-semibold mb-4">Register</h2>
+				<h2 className="text-2xl text-white font-semibold mb-4">Register</h2>
 				<div className="mb-4">
 					<label className="block text-white text-sm font-medium mb-1">
 						Username
@@ -99,7 +99,7 @@ const RegistrationForm = () => {
 					/>
 				</div>
 				<div className="mb-4">
-					<label className="block text-sm font-medium mb-1">
+					<label className="block text-white text-sm font-medium mb-1">
 						Email
 					</label>
 					<input
@@ -112,7 +112,7 @@ const RegistrationForm = () => {
 					/>
 				</div>
 				<div className="mb-4">
-					<label className="block  text-sm font-medium mb-1">
+					<label className="block text-white text-sm font-medium mb-1">
 						Password
 					</label>
 					<input
