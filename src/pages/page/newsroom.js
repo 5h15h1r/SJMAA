@@ -5,9 +5,9 @@ import NewsroomComponent from "@/components/NewsroomComponent";
 
 const newsroom = () => {
   return (
-    <div div className="bg-slate-300 h-[150vh]">
+    <div className="bg-slate-300 h-[150vh]">
       <Navbar />
-      <div className="flex flex-col justify-center items-center ml-[90px] bg-white mt-2 mb-[30px] w-[60%] h-auto shadow-2xl rounded-lg">
+      <div className="flex flex-col justify-center items-center ml-10  bg-white mt-2 mb-[30px] w-[90%] md:w m  h-auto shadow-2xl rounded-lg">
         <NewsroomComponent
         
           image={

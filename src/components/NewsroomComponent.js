@@ -17,7 +17,7 @@ const NewsroomComponent = ({
       <div>
         <img src={image} height="100px" width="180px" className="ml-1 mt-1 mb-1" alt="img" ></img>
       </div>
-      <div className="flex flex-col ml-4">
+      <div className="flex flex-col ml-10">
         <h1 className="font-bold font-sans">{heading}</h1>
         <p>date of posting</p>
         <p>{text}</p>
