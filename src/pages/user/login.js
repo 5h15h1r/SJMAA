@@ -61,7 +61,7 @@ const RegistrationForm = () => {
 
 	return (
 		<div>
-<Navpages />
+		<Navbar />
 			<div className=" flex pt-32 md:pt-36 justify-center  items-center ">
 			
 			<form
