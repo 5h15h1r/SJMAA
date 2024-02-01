@@ -1,23 +1,24 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-const videos = () => {
+const Videos = () => {
     return (
         <div className="bg-white h-[100vh] w-full">
             <Navbar />
             <div className=" flex flex-row w-[90%] md:max-w-6xl bg-[#355245] h-[50px] ml-[5%] mt-10 rounded-lg shadow-2xl">
-        <a href="/page/gallery/album" className="p-1 mx-2 my-2">
+        <Link href="/page/gallery/album" className="p-1 mx-2 my-2">
           Album
-        </a>
+        </Link>
 
-        <a href="/page/gallery/videos" className="p-1 mx-2 my-2">
+        <Link href="/page/gallery/videos" className="p-1 mx-2 my-2">
           Videos
-        </a>
-        <a href="/page/gallery/memories" className="p-1 mx-2 my-2">
+        </Link>
+        <Link href="/page/gallery/memories" className="p-1 mx-2 my-2">
           Memories
-        </a>
+        </Link>
       </div>
             
             <div className=" flex flex-row w-[90%]  md:max-w-6xl bg-[#355245] h-[450px] ml-[5%] mt-10 rounded-lg shadow-2xl">
@@ -28,4 +29,4 @@ const videos = () => {
     );
 };
 
-export default videos;
+export default Videos;
