@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Gallerycomponent = ({img,p1,p2,alt="image"}) => {
+const Gallerycomponent = ({img,p1,p2,alt="image",onclick}) => {
   return (
-      <div className="mx-4 my-4 bg-[#648374] h-[200px] w-[200px] cursor-pointer " >
+      <div className="mx-4 my-4 bg-[#648374] h-[200px] w-[200px] cursor-pointer " onClick={onclick} >
           <img
               className="h-full w-full object-cover"
               src={img}
