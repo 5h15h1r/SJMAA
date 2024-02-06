@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PhotosComponent from "@/components/PhotosComponent";
 import Link from "next/link";
-import photos from "./photos";
+import photos from "../../../util/photos";
 import SubNavebar from "@/components/SubNavebar";
 
 const Activitiesphotos = () => {
