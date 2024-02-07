@@ -4,11 +4,12 @@ import React from 'react'
 
 const PhotosComponent = ({url}) => {
     return (
-        <Link href={url}>
-            <div className='h-[200px] w-[200px] mx-4 my-2'>
-          <Image width={200} height={200 } className="object-cover h-full w-full" src={url}/>
+        
+          <div className='h-[90px] w-[90px] md:h-[200px] md:w-[200px] mx-4 my-2'>
+          <Image width={200} height={200} className="object-fill " src={url}/>
       
-    </div></Link>
+          </div>
+      
       
   )
 }
