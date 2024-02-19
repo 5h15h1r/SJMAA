@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const Gallerycomponent = ({ img, p1, p2, alt = "image", onclick }) => {
+const Gallerycomponent = ({ img, p1, p2, alt = "image", onclick,className="" }) => {
   return (
     <div
       className="mx-4 my-4 bg-[#648374] h-[100px] w-[100px] md:h-[200px] md:w-[200px] cursor-pointer "

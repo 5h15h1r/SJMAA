@@ -13,12 +13,12 @@ const Activitiesphotos = () => {
     <div className="bg-white h-[100vh] w-full">
       <Navbar />
       <SubNavebar/>
-      
+
       <div className="grid grid-cols-3 md:grid-cols-5 h-[450px] bg-[#355245] w-[90%] ml-[5%] mt-10 md:max-w-6xl rounded-lg shadow-2xl ">
         {items}
       </div>
 
-       <Footer /> 
+      <Footer />
     </div>
   );
 };
